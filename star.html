@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>STARS</title>
+	<link rel="stylesheet" href="css/star.css">
+</head>
+<body>
+<div class="star-block">
+	<div class="star">
+		<div class="star__color-block"></div>
+	</div>
+	<div class="star">
+		<div class="star__color-block"></div>
+	</div>
+	<div class="star">
+		<div class="star__color-block"></div>
+	</div>
+	<div class="star">
+		<div class="star__color-block"></div>
+	</div>
+	<div class="star">
+		<div class="star__color-block"></div>
+	</div>
+</div>
+<script>
+	let starRating = 2.2;
+	const starBlock = document.querySelector('.star-block');
+    starBlock.style = '--rating: ' + starRating;
+    document.querySelectorAll('.star__color-block').forEach((item, key)=>{
+        item.style = '--elem-num: ' + (key+1);
+	});
+</script>
+</body>
+</html>

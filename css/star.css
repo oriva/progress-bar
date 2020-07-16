@@ -1,0 +1,15 @@
+.star {
+	display:                inline-block;
+	-webkit-mask-box-image: url(../star.svg);
+	mask-image:             url(../star.svg);
+	height:                 100px;
+	width:                  100px;
+	background-color:       #b4b4b4;
+}
+
+.star__color-block {
+	background-color: #ffe140;
+	height:           100%;
+	max-width:        100%;
+	width: calc((var(--rating) - var(--elem-num)) * 100px);
+}
