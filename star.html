@@ -32,12 +32,15 @@
     starBlock.style = '--rating: ' + starRating;
     document.querySelectorAll('.star').forEach((item, key)=>{
         item.style = '--elem-num: ' + (key);
+        item.dataset.num = key;
 	});
     starBlock.addEventListener('mouseover', function (e) {
-		console.log(e);
+		let num = parseInt(e.target.dataset.num || e.target.parentElement.dataset.num) + 1;
+		if(num)
+            starBlock.style = '--rating: ' + num;
     });
-    starBlock.addEventListener('mouseout', function (e) {
-        console.log('leave');
+    starBlock.addEventListener('mouseleave', function () {
+        starBlock.style = '--rating: ' + starRating;
     })
 
 </script>
