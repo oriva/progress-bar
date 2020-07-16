@@ -152,7 +152,7 @@
         // функция для прогресс бара
         const watchScroll = debounce(function () {
             document.querySelector('.scroll-progress__val').style = 'width: ' + getPercentNow.getPerc(window.pageYOffset) + '%';
-            document.querySelector('.text-anchor-block').style = '--scroll-progress: ' + window.pageYOffset;
+            document.querySelector('.text-anchor-block').style = '--scroll-progress: ' + window.pageYOffset + 'px';
         }, 3);
         window.addEventListener('scroll', watchScroll);
 
@@ -170,7 +170,7 @@
             let elem = document.createElement('div');
             let elemPercent = getPercentNow.getPerc(targetElem.offsetTop).toString();
             elem.dataset.anchorPosition = targetElem.offsetTop.toString();
-            elem.style = '--anchor-pos: ' + targetElem.offsetTop + '; --anchor-height: ' + targetElem.offsetHeight/100;
+            elem.style = '--anchor-pos: ' + targetElem.offsetTop + 'px; --anchor-height: ' + targetElem.offsetHeight/100;
             elem.innerHTML = '<span>' + targetElem.querySelector('h2').innerHTML + '</span><div class="text-anchor-block__bg"></div>';
             return elem;
 		};
