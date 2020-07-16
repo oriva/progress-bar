@@ -30,9 +30,16 @@
 	let starRating = 2.2;
 	const starBlock = document.querySelector('.star-block');
     starBlock.style = '--rating: ' + starRating;
-    document.querySelectorAll('.star__color-block').forEach((item, key)=>{
-        item.style = '--elem-num: ' + (key+1);
+    document.querySelectorAll('.star').forEach((item, key)=>{
+        item.style = '--elem-num: ' + (key);
 	});
+    starBlock.addEventListener('mouseover', function (e) {
+		console.log(e);
+    });
+    starBlock.addEventListener('mouseout', function (e) {
+        console.log('leave');
+    })
+
 </script>
 </body>
 </html>
