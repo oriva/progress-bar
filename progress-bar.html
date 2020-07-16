@@ -9,6 +9,24 @@
 	<link rel="stylesheet" href="css/progress.css">
 </head>
 <body>
-	<progress max="100" value="25"></progress>
+	<progress max="100" value="0"></progress>
+	<h2>Просто картинка, чтобы было заметно загрузку. Можно сделать отслеживание прогресса загрузки на картинку (загружая её как blob через асинхронный запрос), но надо сервак разворачивать
+		<br><em style="color: red">П.с. не вынес script в отдельный файл, чтобы не чистить кеш. Да и проект не на продакшн</em>
+	</h2>
+	<img src="tokio.jpg" alt="">
+	<script>
+		window.addEventListener('load', ()=>{
+		    let progressVal = 0;
+		    let delay = parseInt(prompt('Введите задержку в миллисекундах (Примерно 100)')) || 100;
+			function progressIt () {
+                document.getElementsByTagName('progress')[0].value = progressVal;
+                progressVal++;
+                setTimeout(()=>{
+                    progressIt();
+				}, delay);
+			}
+            progressIt();
+		});
+	</script>
 </body>
 </html>
