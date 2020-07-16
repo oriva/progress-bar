@@ -39,6 +39,12 @@
 		if(num)
             starBlock.style = '--rating: ' + num;
     });
+    starBlock.addEventListener('click', function(e) {
+        let num = parseInt(e.target.dataset.num || e.target.parentElement.dataset.num) + 1;
+        console.log(num);
+        if(num)
+            starRating = num;
+	});
     starBlock.addEventListener('mouseleave', function () {
         starBlock.style = '--rating: ' + starRating;
     })
